@@ -35,25 +35,25 @@
         const auth = firebase.auth();
 
         function signUp() {
-            const email = document.getElementById('signupEmail').value;
-            const password = document.getElementById('signupPassword').value;
+            var email = document.getElementById('signupEmail').value;
+            var password = document.getElementById('signupPassword').value;
             auth.createUserWithEmailAndPassword(email, password)
-                .then(() => {
+                .then(function() {
                     document.getElementById('message').innerText = '✅ Inscription réussie !';
                 })
-                .catch((error) => {
+                .catch(function(error) {
                     document.getElementById('message').innerText = '❌ ' + error.message;
                 });
         }
 
         function signIn() {
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
+            var email = document.getElementById('loginEmail').value;
+            var password = document.getElementById('loginPassword').value;
             auth.signInWithEmailAndPassword(email, password)
-                .then(() => {
+                .then(function() {
                     document.getElementById('message').innerText = '✅ Connecté !';
                 })
-                .catch((error) => {
+                .catch(function(error) {
                     document.getElementById('message').innerText = '❌ ' + error.message;
                 });
         }
